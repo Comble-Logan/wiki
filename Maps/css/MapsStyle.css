@@ -1,0 +1,223 @@
+﻿/* Définition de la mise en page en grille 13x3 */
+.container {  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3,0.4fr) repeat(10,1fr);
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        ". Titre ."
+        "Description Description Description"
+        ". Titre2 ."
+        "Haven Haven Haven"
+        "Split Split Split"
+        "Bind Bind Bind"
+        "Ascent Ascent Ascent"
+        "Icebox Icebox Icebox"
+        "Breeze Breeze Breeze"
+        "Fracture Fracture Fracture"
+        "Pearl Pearl Pearl"
+        "Lotus Lotus Lotus"
+        "Sunset Sunset Sunset";
+}
+
+/* Styles pour les écrans de petite taille */
+@media only screen and (max-width: 768px) {
+    .container {  
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(13,0.4fr);
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            ". Titre ."
+            "Description Description Description"
+            ". Titre2 ."
+            "Haven Haven Haven"
+            "Split Split Split"
+            "Bind Bind Bind"
+            "Ascent Ascent Ascent"
+            "Icebox Icebox Icebox"
+            "Breeze Breeze Breeze"
+            "Fracture Fracture Fracture"
+            "Pearl Pearl Pearl"
+            "Lotus Lotus Lotus"
+            "Sunset Sunset Sunset";
+    }
+    
+    /* Style de la description sur les petits écras */
+    .Description { 
+        text-align: justify; /* Définition du style de texte en justifié */
+    }
+
+    /* Style pour les éléments h2 sur les petits écrans */
+    h2 {
+        background-color: #333; /* Fond sombre pour une meilleure lisibilité */
+        color: #fff; /* Texte blanc */
+        padding: 10px; /* Espacement interne */
+        border-radius: 5px; /* Bordure arrondie */
+    }
+
+    /* Souslignement des titres h2 sur les petits écrans */
+    h2::after {
+    height: 1px; /* Hauteur du souslignage */
+    }
+}
+
+
+/* Affectation des différentes zones de la grille */
+.Titre { grid-area: Titre; }
+
+.Description { 
+    grid-area: Description; 
+    background-color: gray; /* Fond gris clair */
+    border: thick double black; /* Bordure grise */
+    padding: 2px; /* Marge interne */
+}
+
+.Titre2 { grid-area: Titre2; }
+
+.Haven { grid-area: Haven; }
+
+.Split { grid-area: Split; }
+
+.Bind { grid-area: Bind; }
+
+.Ascent { grid-area: Ascent; }
+
+.Icebox { grid-area: Icebox; }
+
+.Breeze { grid-area: Breeze; }
+
+.Fracture { grid-area: Fracture; }
+
+.Pearl { grid-area: Pearl; }
+
+.Lotus { grid-area: Lotus; }
+
+.Sunset { grid-area: Sunset; }
+
+/* Style du fond de la page en dégradé */
+body{
+    background: linear-gradient(45deg,#FF4655 , #111111); 
+}
+
+/* Style des images */
+img {
+    width: 50%; /* Largeur de 50% */
+    height: 40%; /* Hauteur de 40% */
+    border-radius: 25% 10%; /* Bordure arrondie */
+}
+
+/* Style pour les titres h2 */
+h2 {
+    font-family: 'Helvetica', sans-serif; /* Police d'écriure */
+    font-size: 1.5em; /* Taille du texte */
+    color: #ffffff; /* Texte en blanc pour un fond en dégradé */
+    text-align: center; /* Alignement vers le centre */
+    margin-bottom: 10px; /* Marge en bas de l'élément de 10px */
+    position: relative; /* Définition d'un positionnement relative */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ajout d'une ombre au texte */
+}
+
+/* Souslignement des titres h2 */
+h2::after {
+    content: ""; /* Contenu vide pour créer l'élément de souslignage */
+    position: absolute; /* Définition d'un positionnement absolue */
+    bottom: 0; /* Positionnement au bas de l'élément parent */
+    left: 50%; /* Positionnement à 50% de la largeur de l'élément parent */
+    transform: translateX(-50%); /* Centre l'élément horizontalement */
+    width: 30%; /* Largeur du soulignage à 30% de la largeur de l'élément parent */
+    height: 2px; /* Hauteur du souslignage */
+    background-color: whitesmoke; /* Soulignage blanc pour un fond en dégradé */
+}
+
+/* Style pour les titres h3 */
+h3 {
+    font-family: 'Helvetica', sans-serif; /* Police d'écriure */
+    font-size: 4vh; /* Taille du texte */
+    color: black; /* Texte en noir */
+    text-align: center; /* Alignement vers le centre */
+    margin-bottom: 10px; /* Marge en bas de l'élément de 10px */
+    position: relative; /* Définition d'un positionnement relative */
+}
+
+/* Souslignement des titres h3 */
+h3::after {
+    content: ""; /* Contenu vide pour créer l'élément de souslignage */
+    position: absolute; /* Définition d'un positionnement absolue */
+    bottom: 0; /* Positionnement au bas de l'élément parent */
+    left: 50%; /* Positionnement à 50% de la largeur de l'élément parent */
+    transform: translateX(-50%); /* Centre l'élément horizontalement */
+    width: 50%; /* Largeur du soulignage à 50% de la largeur de l'élément parent */
+    height: 2px; /* Hauteur du souslignage */
+    background-color: black; /* Soulignage en noir */
+}
+
+/* Style pour les articles */
+article {
+    position: relative; /* Définition d'un positionnement relative */
+    margin: 3% 5% 3% 5%; /* Paramétrage des marges */
+    text-align: justify; /* Définition du style de texte en justifié */
+}
+
+/* Style des articles lorsqu'ils sont survolés*/
+article:hover {
+    margin: 1% 2% 1% 2%; /* Paramétrage des marges */
+    cursor: pointer; /* Style du pointeur de souris */
+    color: black; /* Texte en noir */
+}
+
+/* Style des titres h3 de la class img_left */
+.img_left h3 {
+    position: absolute; /* Définition d'un positionnement absolue */
+    font-size: 3vw; /* Taille du texte */
+    right: 22%; /* Positionnement à 22% de la largeur de l'élément parent du coté droit*/
+    top: 4%;
+}
+
+/* Style des paragraphes de la class img_left */
+.img_left p {
+    font-size: 1.4vw; /* Taille du texte */
+    position: absolute; /* Définition d'un positionnement absolue */ 
+    left: 52%; /* Positionnement à 52% de la largeur de l'élément parent du coté gauche */
+    right: 2%;
+    top: 35%;
+}
+
+/* Style des titres h3 de la class img_right */
+.img_right h3 {
+    font-size: 3vw; /* Taille du texte */
+    position: absolute; /* Définition d'un positionnement absolue */
+    left: 22%; /* Positionnement à 22% de la largeur de l'élément parent du coté gauche */
+    top: 4%; /* Positionnement à 4% de la largeur de l'élément parent du coté gauche */
+}
+
+/* Style des paragraphes de la class img_right */
+.img_right p {
+    font-size: 1.4vw; /* Taille du texte */
+    position: absolute; /* Définition d'un positionnement absolue */
+    right: 52%; /* Positionnement à 52% de la largeur de l'élément parent du coté droit*/
+    left: 2%; /* Positionnement à 2% de la largeur de l'élément parent du coté gauche */
+    top: 35%; /* Positionnement à 35% de la hauteur de l'élément parent du haut */
+}
+
+/* Style des images de la class img_right */
+.img_right img {
+    position: relative; /* Définition d'un positionnement relative */
+    left: 50%; /* Positionnement à 50% de la largeur de l'élément parent du coté gauche*/
+    top: 10%; /* Positionnement à 35% de la hauteur de l'élément parent du haut */
+}
+
+/* Style des liens hypertextes */
+a{
+    color: black; /* Texte en noir */
+}
+
+/* Style des liens hypertextes déjà visités*/
+a:active {
+    color: black; /* Texte en noir */
+}
+
+
+

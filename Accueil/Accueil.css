@@ -1,0 +1,75 @@
+/* Fond d'écran du site */
+body{
+    background-image:url(fond_ecran_valorant.jpg);
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-size: 100vw 100vh; /* Utilise la largeur et la hauteur de la fenêtre comme taille de l'image */
+    background-attachment: fixed; /* Maintient l'image fixe lors du défilement */
+    display: grid; /* Utilisation de display grid pour le corps de la page */
+    place-items: center; /* Centre le contenu dans le corps */
+    height: 100vh; /* Hauteur de la fenêtre visible */
+}
+
+section{
+    width: 70%; /* Largeur du conteneur */
+    background: linear-gradient(45deg, #FF4655, #111111);
+    padding: 5%;
+    border-radius: 1%;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "header header header"
+      "nav nav nav"
+      "content content content"
+      "footer footer footer"; 
+}
+
+header { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "homepage titre logo"
+      "homepage titre logo"
+      "homepage titre logo";
+    grid-area:header; }
+nav { grid-area: nav; }
+main { grid-area: content; }
+footer { grid-area: footer; }
+#logo { grid-area: logo;}
+#titre { grid-area: titre;}
+
+h1{
+    display: grid;
+    place-items: center;
+    grid-template-columns: auto;
+    text-align: center;
+    text-decoration: solid;
+    color: #FBFBFB;
+}
+
+
+
+#homelink{
+    grid-area: homepage;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  #homelink #homeicon {
+    grid-area: homepage;
+    max-width: 50%; /* Ajuste la largeur de l'image à la taille de la cellule */
+    max-height: 50%; /* Ajuste la hauteur de l'image à la taille de la cellule */
+    width: auto;
+    height: auto;
+  }
+
+
+
+
+p{
+    color: #FBFBFB;
+}

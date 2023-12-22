@@ -1,0 +1,198 @@
+body {
+	 background: linear-gradient(#ff4655,#111111); /* dégradé rouge et noir */
+}
+
+/* Classes */
+h2 {
+	font-size: 270%;
+	color: rgb(206, 206, 222);
+}
+
+/* Nom des classes */
+h3 {
+    font-size: 200%;
+    margin: 3px;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+/* Colore le nom des classes quand suvolé */
+h3>a:hover {
+    color: #e0cbcb; /* gris-blanc */
+}
+
+/* Enlever le point devant le lien de chaque classe */
+h3 > a {
+        text-decoration: none;
+}
+
+/* Taille du texte dans le nav */
+nav {
+	font-size: 400%;
+}
+
+/* Positionnement du nav pour chaque catégorie une une*/
+nav>ul>li{
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+}
+
+/* Positionnement du nav */
+nav>ul{
+    padding: 0px;
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Décoration du nav */
+nav ul li a {
+    border: 5px solid red;
+    display: block;
+    padding: 1.5rem;
+    text-decoration: none;
+}
+
+/* Enlever le point devant les liens pour le nav */
+a {
+    text-decoration: none;
+}
+
+/* Couleur du texte dans les balises a*/
+a{
+    color: black;
+}
+
+/* Quand on survole les catégores en haut */
+a:hover{
+    color: red;
+}
+
+/* Mise en page des images*/
+img {
+	height: 120px;
+	width: auto; 
+}
+
+/* Mise en page du texte */
+p {
+	margin: 3px;
+	padding: 0.5rem;
+	font-size: 170%;
+	text-align: justify;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+}
+
+main {
+	display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Placement des différents éléments */
+.conteneur {
+	height: 100vh;
+	display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 100px min-content auto auto 100px;
+    grid-template-areas: 
+        "Entete"
+        "Menu"
+        "Contenu"
+        "Pied";
+}
+
+header{
+    grid-row: 2;
+    grid-column: 1;
+    grid-area: Entete;
+}
+
+nav{
+    grid-row: 2;
+    grid-column: 1;
+    grid-area: Menu;
+}
+
+main{
+    grid-row: 2;
+    grid-column: 1;
+    grid-area: Contenu;
+}
+
+
+footer{
+    grid-row: 5;
+    grid-column: 1;
+    grid-area: Pied;
+}
+
+
+/* Pour ordinateur */
+@media only screen and (768px<=width){ 
+    main>h2{
+        grid-area: classe;
+    }
+
+    main{
+        padding: 5%;
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        grid-row-gap: 30px;
+        grid-template-areas: 
+            "classe classe"
+            "controller_logo controleur"
+            "duellist_logo duelliste"
+            "initiator_logo initiateur"
+            "sentinel_logo sentinelle";
+    }
+
+    .controleur{
+        grid-area: controleur;
+    }
+    .controller_logo{
+        grid-area: controller_logo;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .duelliste{
+        grid-area: duelliste;
+    }
+    .duellist_logo{
+        grid-area: duellist_logo;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .initiateur{
+        grid-area: initiateur;
+    }
+    .initiator_logo{
+        grid-area: initiator_logo;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .sentinelle{
+        grid-area: sentinelle;
+    }
+    .sentinel_logo{
+        grid-area: sentinel_logo;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

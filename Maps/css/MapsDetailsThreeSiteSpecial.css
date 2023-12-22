@@ -1,0 +1,251 @@
+/* Définition de la mise en page en grille 14x4 */
+.container {  
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr 1.5fr 0.5fr;
+  grid-template-rows: auto;
+  gap: 20px 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "TitreMap TitreMap TitreMap TitreMap"
+    "Carte Carte Carte Carte"
+    ". DescriptionMap DescriptionMap ."
+    "Titre2 Titre2 Titre2 Titre2"
+    "AttackerSpawn AttackerSpawn DefenderSpawn DefenderSpawn"
+    "Titre3 Titre3 Titre3 Titre3"
+    ". DescriptionSite DescriptionSite ."
+    "SiteA SiteA DescriptionSiteA DescriptionSiteA"
+    "DescriptionSiteB DescriptionSiteB SiteB SiteB"
+    "SiteC SiteC DescriptionSiteC DescriptionSiteC"
+    ". InformationSite InformationSite ."
+    "TitreSpecial TitreSpecial TitreSpecial TitreSpecial"
+    ". DescriptionSpecial DescriptionSpecial ."
+    "ImageSpecial1 ImageSpecial1 ImageSpecial2 ImageSpecial2";
+}
+
+/* Styles pour les écrans de petite taille */
+@media only screen and (max-width: 768px) {
+    /* Définition de la mise en page en grille 17x2 */
+    .container {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "TitreMap TitreMap"
+        "Carte Carte"
+        "DescriptionMap DescriptionMap"
+        "Titre2 Titre2"
+        "AttackerSpawn DefenderSpawn"
+        "Titre3 Titre3"
+        "DescriptionSite DescriptionSite"
+        "DescriptionSiteA DescriptionSiteA"
+        "SiteA SiteA"
+        "DescriptionSiteB DescriptionSiteB"
+        "SiteB SiteB"
+        "DescriptionSiteC DescriptionSiteC"
+        "SiteC SiteC"
+        "InformationSite InformationSite"
+        "TitreSpecial TitreSpecial"
+        "DescriptionSpecial DescriptionSpecial"
+        "ImageSpecial1 ImageSpecial2";
+    }
+
+    /* Style pour les éléments h2 sur les petits écrans */
+    h2 {
+        background-color: #333; /* Fond sombre pour une meilleure lisibilité */
+        color: #fff; /* Texte blanc */
+        padding: 10px; /* Espacement interne */
+        border-radius: 5px; /* Bordure arrondie */
+    }
+}
+
+/* Affectation des différentes zones de la grille */
+.TitreMap { 
+    grid-area: TitreMap; 
+}
+
+.Carte { 
+    grid-area: Carte; 
+    width : 30%; /* Définition d'une taille à 30% */
+}
+
+.DescriptionMap { 
+    grid-area: DescriptionMap;
+    text-align: center; /* Alignement vers le centre */
+    background-color: lightgray; /* Fond gris clair */
+    border: thick double black; /* Bordure grise */
+    padding: 5px; /* Espacement interne */
+}
+
+.Titre2 { 
+    grid-area: Titre2; 
+}
+
+.AttackerSpawn { 
+    grid-area: AttackerSpawn; 
+    text-align: center; /* Alignement vers le centre */
+}
+
+
+.DefenderSpawn { 
+    grid-area: DefenderSpawn; 
+    text-align: center; /* Alignement vers le centre */
+}
+
+.Titre3 { 
+    grid-area: Titre3; 
+}
+
+.DescriptionSite { 
+    grid-area: DescriptionSite; 
+    font-style: italic; /* Définition du style italique */
+    background-color: lightgray; /* Fond gris clair */
+    border: thick double black; /* Bordure grise */
+    padding: 5px; /* Bordure interne */
+}
+
+.SiteA { 
+    grid-area: SiteA;
+}
+
+.SiteB { 
+    grid-area: SiteB; 
+}
+
+.SiteC{
+    grid-area: SiteC;
+}
+
+.DescriptionSiteA { 
+    grid-area: DescriptionSiteA; 
+    text-align: justify; /* Définition du style de texte en justifié */
+    border: solid 5px; /* Bordure de taille 5px */
+    padding: 45px; /* Bordure interne */
+    border-radius: 0% 100% 2% 98% / 77% 9% 91% 23%; /*Mise en forme de la bordure*/
+    font-size: 75%; /* Taille du texte */
+    background-color: #A36565; /* Fond saumon foncé */
+}
+
+.DescriptionSiteB { 
+    grid-area: DescriptionSiteB; 
+    text-align: justify; /* Définition du style de texte en justifié */
+    border: solid 5px; /* Bordure de taille 5px */
+    padding: 45px; /* Bordure interne */
+    border-radius: 100% 0% 98% 2% / 9% 77% 23% 91%; /*Mise en forme de la bordure*/
+    font-size: 75%; /* Taille du texte */
+    background-color: #A36565; /* Fond saumon foncé */
+}
+
+.DescriptionSiteC { 
+    grid-area: DescriptionSiteC; 
+    text-align: justify; /* Définition du style de texte en justifié */
+    border: solid 5px; /* Bordure de taille 5px */
+    padding: 45px; /* Bordure interne */
+    border-radius: 0% 100% 2% 98% / 77% 9% 91% 23%; /*Mise en forme de la bordure*/
+    font-size: 75%; /* Taille du texte */
+    background-color: #A36565; /* Fond saumon foncé */
+}
+
+.InformationSite { 
+    grid-area: InformationSite; 
+    font-style: italic; /* Définition du style italique */
+    background-color: gray; /* Fond gris clair */
+    padding: 10px; /* Espacement interne pour le contenu */
+    border: thick double black; /* Bordure grise */
+}
+
+.TitreSpecial {
+    grid-area: TitreSpecial;
+}
+
+.DescriptionSpecial {
+    grid-area: DescriptionSpecial;
+    text-align: justify; /* Définition du style de texte en justifié */
+    background-color: lightgray; /* Fond gris clair */
+    border: thick double black; /* Bordure grise */
+    padding: 5px; /* Espacement interne */
+}
+
+.ImageSpecial1 {
+    grid-area: ImageSpecial1;
+    text-align: center; /* Alignement vers le centre */
+}
+
+.ImageSpecial2 {
+    grid-area: ImageSpecial2;
+    text-align: center; /* Alignement vers le centre */
+}
+
+
+/* Applique ces styles à tous les éléments de la page */
+*{
+    justify-items: center; /* Centre les éléments sur horizontalement dans le conteneur de la grille */
+    align-self: center; /* Centre les éléments verticalemetn par rapport à leur propre conteneur */
+}
+
+/* Style du fond de la page en dégradé */
+body{
+    background: linear-gradient(45deg,#FF4655 , #111111);
+}
+
+/* Style pour les titres h2 */
+h2 {
+    font-family: 'Helvetica', sans-serif; /* Police d'écriure */
+    font-size: 2em; /* Taille du texte */
+    color: #ffffff; /* Texte en blanc pour un fond en dégradé */
+    text-align: center; /* Alignement vers le centre */
+    margin-bottom: 10px; /* Marge en bas de l'élément de 10px */
+    position: relative; /* Définition d'un positionnement relative */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ajout d'une ombre au texte */
+}
+
+/* Souslignement des titres h2 */
+h2::after {
+    content: ""; /* Contenu vide pour créer l'élément de souslignage */
+    position: absolute; /* Définition d'un positionnement absolue */
+    bottom: 0; /* Positionnement au bas de l'élément parent */
+    left: 50%; /* Positionnement à 50% de la largeur de l'élément parent */
+    transform: translateX(-50%); /* Centre l'élément horizontalement */
+    width: 50%; /* Largeur du soulignage à 50% de la largeur de l'élément parent */
+    height: 2px; /* Hauteur du souslignage */
+    background-color: whitesmoke; /* Soulignage blanc pour un fond en dégradé */
+}
+
+/* Style pour les titres de niveau h3 */
+h3 {
+    font-size: 1em; /* Taille du texte */
+    text-align: center; /* Alignement vers le centre */
+}
+
+/* Style pour les images */
+img {
+    max-width: 100%; /* Largeur maximale de l'image de 100% */
+    height : auto; /* Ajustement automatique de la hauteur */
+    border-radius: 30px; /* Bordure arrondie */
+}
+
+/* Styles pour les paragraphes des class AttackerSpawn, DefenderSpawn, ImageSpecial1 et ImageSpecial2 */
+.DefenderSpawn p, .AttackerSpawn p, .ImageSpecial1 p, .ImageSpecial2 p {
+    font-family: 'Helvetica', sans-serif; /* Police d'écriure */
+    font-size: 1em; /* Taille du texte */
+    color: black; /* Texte en blanc pour un fond en dégradé */
+    text-align: center; /* Alignement vers le centre */
+    margin-bottom: 10px; /* Marge en bas de l'élément de 10px */
+    position: relative; /* Définition d'un positionnement relative */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ajout d'une ombre au texte */
+}
+
+/* Souslignement des paragraphes des class AttackerSpawn, DefenderSpawn, ImageSpecial1 et ImageSpecial2 */
+.DefenderSpawn p::after, .AttackerSpawn p::after, .ImageSpecial1 p::after, .ImageSpecial2 p::after {
+    content: ""; /* Contenu vide pour créer l'élément de soulignage */
+    position: absolute; /* Définition d'un positionnement absolue */
+    bottom: -2px; /* Positionnement au bas de l'élément parent */
+    left: 50%; /* Positionnement à 50% de la largeur de l'élément parent */
+    transform: translateX(-50%); /* Centre l'élément horizontalement */
+    width: 15%; /* Largeur du soulignage à 15% de la largeur de l'élément parent */
+    height: 2px; /* Hauteur du soulignage */
+    background-color: black; /* Soulignage blanc pour un fond en dégradé */
+}
+
+
+/* Style général pour les paragraphes */
+p {
+    font-size: 1em; /* Taille du texte */
+}

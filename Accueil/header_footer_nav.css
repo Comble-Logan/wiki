@@ -1,0 +1,251 @@
+/* Fond d'écran du site */
+body{
+    background-image:url(fond_ecran_valorant.jpg);
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-size: 100vw 100vh; /* Utilise la largeur et la hauteur de la fenêtre comme taille de l'image */
+    background-attachment: fixed; /* Maintient l'image fixe lors du défilement */
+    display: grid; /* Utilisation de display grid pour le corps de la page */
+    place-items: center; /* Centre le contenu dans le corps */
+    height: 100vh; /* Hauteur de la fenêtre visible */
+    grid-template-columns: 1fr; 
+    grid-template-rows:  repeat(2, auto); 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "section"
+      "footer";
+}
+
+/* Page du site */
+section{
+    width: 60%;
+    background: linear-gradient(45deg, #FF4655, #111111);
+    padding: 5%;
+    padding-bottom: 0%;
+    border-radius: 1%;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows:  repeat(4, auto); 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "header header header"
+      "nav nav nav"
+      "content content content"; 
+      grid-area: section;
+}
+
+p{
+    color: #FBFBFB;
+}
+header { 
+    display: grid; 
+    grid-template-columns: 20% auto 20%; 
+    grid-template-rows: 100%; 
+    gap: 0px 0px; 
+    grid-template-areas:"homepage titre logo";
+    grid-area:header; 
+    justify-items: center; 
+    align-items: center; 
+}
+
+/* Définie les noms des cellules */
+nav { grid-area: nav; }
+main { grid-area: content; }
+footer { grid-area: footer; }
+.logo { grid-area: logo;
+    align-self: center;
+    width: 100%; /* Ajuste la largeur du logo */
+    height: auto; /* Garde la hauteur proportionnelle à la largeur */
+    }
+.titre { grid-area: titre;
+    align-self: center;
+    text-align: center;
+    text-decoration: solid;
+    color: #FBFBFB;
+    text-shadow: 0 0 7px #FBFBFB,
+    0 0 10px #FBFBFB;
+}
+
+/* Lien et image pour l'Accueil */
+.homelink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: homepage;
+    width: 30%;
+}
+.homeicon {
+    width: 100%;
+    height: auto;
+}
+
+/* Navigation */
+.agents{
+    transition-duration: 5ms;
+    font-size: 125%;
+    text-decoration: none;
+    color: #FBFBFB;
+    text-shadow: 0 0 7px #FBFBFB,
+    0 0 10px #FBFBFB;
+}
+.armes{
+    transition-duration: 5ms;
+    font-size: 125%;
+    text-decoration: none;
+    color: #FBFBFB;
+    text-shadow: 0 0 7px #FBFBFB,
+    0 0 10px #FBFBFB;
+}
+
+.boutique{
+    transition-duration: 5ms;
+    font-size: 125%;
+    text-decoration: none;
+    color: #FBFBFB;
+    text-shadow: 0 0 7px #FBFBFB,
+    0 0 10px #FBFBFB;
+}
+
+.maps{
+    transition-duration: 5ms;
+    font-size: 125%;
+    text-decoration: none;
+    color: #FBFBFB;
+    text-shadow: 0 0 7px #FBFBFB,
+    0 0 10px #FBFBFB;
+}
+
+.barre{
+    margin-left: 20%;
+    margin-right: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1%;
+    border-style: solid;
+    border-color: #111111;
+    border-radius: 5%;
+    background: radial-gradient(#FF4655, #111111);
+    gap: 5%;
+}
+
+/* Footer */
+footer{
+    background-color: #4E4E4E;
+    width: 60%;
+    padding: 5%;
+    padding-top: 0%;
+    border-bottom-left-radius: 1%;
+    border-bottom-right-radius: 1%;
+
+    display: grid;
+    grid-template-columns: 30% auto 30%;
+    grid-template-rows: auto auto;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+        "LOGO Titre Version"
+        "contacter Sources Sites-Officiel";
+}
+      
+.LOGO { grid-area: LOGO;
+    align-self: center;
+    width: 75%; /* Ajuste la largeur du logo */
+    height: auto; /* Garde la hauteur proportionnelle à la largeur */ }
+
+.Titre { grid-area: Titre;
+    justify-content: flex-start;
+    font-size: 100%;
+    align-self: center;
+    text-align: center;
+    text-decoration: solid;
+    color: #FBFBFB;
+    text-shadow: 0 0 7px #FBFBFB,
+    0 0 10px #FBFBFB; 
+}
+
+.Version { grid-area: Version;
+    font-size: 100%;
+    align-self: center;
+    text-align: center;
+    text-decoration: solid;
+    color: #FBFBFB;
+    text-shadow: 0 0 7px #FBFBFB,
+    0 0 10px #FBFBFB; 
+}
+
+.contacter { grid-area: contacter; }
+
+.Sources { grid-area: Sources; 
+    border-left : 1px #111111 solid;
+    padding : 30%;
+    border-right: 1px #111111 solid;
+}
+
+.Sites-Officiel { grid-area: Sites-Officiel; 
+    display: grid; 
+    grid-template-columns:  50% auto; 
+    grid-template-rows: auto auto; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "Logo-valo Valo"
+      "Logo-riot Riot"; 
+    grid-area: Sites-Officiel; 
+  }
+  .linkValo { grid-area: Logo-valo; 
+    width: 100%; /* Ajuste la largeur du logo */
+    height: auto; /* Garde la hauteur proportionnelle à la largeur */}
+  .linkRiot { grid-area: Logo-riot;
+    width: 100%; /* Ajuste la largeur du logo */
+    height: auto; /* Garde la hauteur proportionnelle à la largeur */ }
+  .Valo { grid-area: Valo; }
+  .Riot { grid-area: Riot; } 
+
+      
+/* Animations */
+nav li{
+    list-style: none;
+}
+
+.sub_menu_agents {
+    display: none;
+    position: absolute;
+    background: linear-gradient(#FF4655, #111111); /* Couleur de fond du sous-menu */
+    padding: 2%;
+    border-radius: 5%; /* Pour arrondir les coins du sous-menu */
+}
+
+.barre li:hover .sub_menu_agents {
+    display: block;
+}
+
+.sub_menu_agents > li > a{
+    text-decoration: none;
+    color: #FBFBFB;
+    font-weight: bold;
+}
+
+
+.sub_menu_armes {
+    display: none;
+    position: absolute;
+    background: linear-gradient(#FF4655, #111111); /* Couleur de fond du sous-menu */
+    padding: 2%;
+    border-radius: 5%; /* Pour arrondir les coins du sous-menu */
+}
+
+.barre li:hover .sub_menu_armes {
+    display: block;
+}
+
+.sub_menu_armes > li > a{
+    text-decoration: none;
+    color: #FBFBFB;
+    font-weight: bold;
+}
